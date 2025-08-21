@@ -10,4 +10,3 @@ spec:
     - nodePort: 31001
       port: 8080
       targetPort: 80
-  type: NodePort
