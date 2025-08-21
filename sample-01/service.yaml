@@ -7,6 +7,6 @@ spec:
   selector:
     app: my-app
   ports:
-    - port: 31001
+    - nodePort: 31001
       targetPort: 80
   type: NodePort
