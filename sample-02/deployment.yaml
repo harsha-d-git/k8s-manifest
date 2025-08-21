@@ -23,7 +23,20 @@ spec:
           image: nginx:latest
           ports:
             - containerPort: 80
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-clusterip
+  namespace: app
+spec:
+  type: ClusterIP
+  selector:
+    app: my-app
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -36,4 +49,5 @@ spec:
     app: my-app
   ports:
     - nodePort: 31021
+      port: 8080
       targetPort: 80
